@@ -14,15 +14,10 @@ export class ListComponent {
     'Thor',
     'Hawkeye'
   ];
-  public deletedHeroes: string[] = [];
+  public deletedHeroe: string = '';
 
-  deleteLastHeroe() {
-    if(this.heroNames.length !== 0) {
-      const lastHeroe = this.heroNames.pop()!;
-      this.deletedHeroes.push(lastHeroe);
-    } else {
-      console.log('todo fue eliminado');
-    }
+  removeLastHeroe() {
+    this.deletedHeroe = this.heroNames.pop()!;
   }
   
 }

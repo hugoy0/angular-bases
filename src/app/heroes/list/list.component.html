@@ -1,10 +1,16 @@
 <h3>Heroes list</h3>
 
-<h3 *ngIf="deletedHeroes.length !== 0">Deleted heroe <small *ngFor="let deleted of deletedHeroes" class="text-danger">{{deleted}}</small></h3>
-<h3 *ngIf="deletedHeroes.length === 0">No deleted heroes yet</h3>
+<h3 *ngIf="deletedHeroe; else nothingDeleted">
+    Deleted heroe <small class="text-danger">{{deletedHeroe}}</small>
+</h3>
+
+<ng-template #nothingDeleted>
+    <h3 *ngIf="!deletedHeroe">No deleted heroes yet</h3>
+</ng-template>
 
 <button 
-    (click)="deleteLastHeroe()"
+    *ngIf="heroNames.length > 0"
+    (click)="removeLastHeroe()"
     class="btn btn-danger">
     Delete last hero
 </button>
