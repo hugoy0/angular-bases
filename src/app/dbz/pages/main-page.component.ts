@@ -24,10 +24,11 @@ export class MainPageComponent {
     ];
 
     addNew(character: Character):void {
-        console.log(character);
         this.characterList.push(character);
     }
 
-
+    deleteCharacter(index:number):void {
+        this.characterList.splice(index, 1);
+    }
 
 }

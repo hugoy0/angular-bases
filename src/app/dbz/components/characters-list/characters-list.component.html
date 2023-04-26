@@ -7,15 +7,18 @@
                 odd as isOdd; 
                 first as isFirst; 
                 last as isLast" 
-        class="list-group-item" 
+        class="list-group-item d-flex justify-content-between align-items-center" 
         [ngClass]="{
             'list-group-item-primary': isFirst,
             'list-group-item-dark': isLast
         }">
 
-            <span>{{character.name}}</span> - 
-            <strong>Power:</strong>
-            <span>{{character.power}}</span>
+            <div>
+                <span>{{character.name}}</span> - 
+                <strong>Power:</strong>
+                <span>{{character.power}}</span>
+            </div>
+            <button (click)="onDeleteCharacter(i)" class="btn btn-danger">X</button>
 
     </li>
 </ul>
