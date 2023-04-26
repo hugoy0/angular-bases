@@ -4,12 +4,18 @@
         *ngFor="let character of characterList; 
                 index as i; 
                 even as isEven; 
-                odd as isOdd" 
-        class="list-group-item">
+                odd as isOdd; 
+                first as isFirst; 
+                last as isLast" 
+        class="list-group-item" 
+        [ngClass]="{
+            'list-group-item-primary': isFirst,
+            'list-group-item-dark': isLast
+        }">
 
             <span>{{character.name}}</span> - 
             <strong>Power:</strong>
             <span>{{character.power}}</span>
-            
+
     </li>
 </ul>
