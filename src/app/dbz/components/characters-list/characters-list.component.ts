@@ -10,11 +10,6 @@ export class CharactersListComponent {
 
   @Input()
 
-  public characterList: Character[] = [
-    {
-      name: 'Trunks',
-      power: 10,
-    }
-  ];
+  public characterList: Character[] = [];
 
 }

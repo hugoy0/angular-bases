@@ -8,7 +8,7 @@ import { Character } from "../interfaces/character.interface";
 
 export class MainPageComponent {
 
-    public characters: Character[] = [
+    public characterList: Character[] = [
         {
             name: 'Krillin',
             power: 1000,
@@ -23,8 +23,9 @@ export class MainPageComponent {
         }
     ];
 
-    onNewCharacter(character: Character):void {
-        console.log('Main', character);
+    addNew(character: Character):void {
+        console.log(character);
+        this.characterList.push(character);
     }
 
 
